@@ -22,20 +22,11 @@ file = open("python.txt")
 total_requests = 0
 
 
-for line in file: ## to go through each line and get total count
-    word = "local"
-    word1 = "remote"
-    count = 0
-    with open("python.txt", 'r') as file:
-        for line in file:
-            words = line.split()
-            for i in words:
-                if (i == word):
-                    count = count + 1
-            words2 = line.split()
-            for i in words:
-                if (i == word1):
-                    count = count + 1
-    print(f'There are {count} number of requests')
+#Count the number of lines in python
+with open('python.txt','r') as file:
+   cnt = 0
+   for line in file: 
+      cnt += 1
+print(f"The Total Number of Requests are: {cnt}")
 
-###^^^there is definitely a more streamlined way to do this, but it should work
+###^^^this should count the number of lines instead of the occurrences of the starting works. Haven't tested it but might work better if someone can throw it into an interpreter
