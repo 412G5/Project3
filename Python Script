@@ -36,6 +36,6 @@ for line in file: ## to go through each line and get total count
             for i in words:
                 if (i == word1):
                     count = count + 1
-        print(f'There are {count} number of requests')
+    print(f'There are {count} number of requests')
 
 ###^^^there is definitely a more streamlined way to do this, but it should work
