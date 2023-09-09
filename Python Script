@@ -3,9 +3,8 @@
 
 import requests
 
-url = "https://s3.amazonaws.com/tcmg476/http_access_log"
-
-r = requests.get(url, stream = True)
+url = 'https://s3.amazonaws.com/tcmg476/http_access_log'
+r = requests.get(url, allow_redirects=True)
 
 with open("python.txt","wb") as textfile:
     for chunk in r.iter_content(chunk_size=1024):
@@ -13,29 +12,9 @@ with open("python.txt","wb") as textfile:
 # writing to pdf file
         if chunk:
             textfile.write(chunk)
-            result={
-            "total_requests":0,
-}
-
+            result={"total_requests":0,}
+            
 file = open("python.txt")
 
-total_requests = 0
-
-
-for line in file: ## to go through each line and get total count
-    word = "local"
-    word1 = "remote"
-    count = 0
-    with open("python.txt", 'r') as file:
-        for line in file:
-            words = line.split()
-            for i in words:
-                if (i == word):
-                    count = count + 1
-            words2 = line.split()
-            for i in words:
-                if (i == word1):
-                    count = count + 1
-    print(f'There are {count} number of requests')
-
-###^^^there is definitely a more streamlined way to do this, but it should work
+total_requests = sum(1 for line in file)
+print("Total number of requests:", total_requests)
