@@ -16,12 +16,30 @@ with open("python.txt","wb") as textfile:
 
 # Question 1
 
-# finds date of last entry
+# extracts last date and calculating date six months ago
 with open("python.txt", "r") as textfile:
     last_line = textfile.readlines()[-1]
     last_datetime = last_line.split()[3]
     clean_datetime = datetime.strptime(last_datetime, '[%d/%b/%Y:%H:%M:%S')
     last_date = clean_datetime.date()
+    six_months_ago = last_date - timedelta(days=180)
+
+# begins process of extracting date from each line
+file = open("python.txt", "r")
+count = 0
+
+for line in file:
+    count += 1
+    
+    # removes lines without date
+    if "index.html" in line:
+        continue
+    
+    # searches for datetime and extracts date only
+    date_str = re.search('\d{2}/\D{3}/\d{4}', line)
+    clean_datetime = datetime.strptime(date_str.group(), '%d/%b/%Y')
+    line_date = clean_datetime.date()
+
 
 
 # Question 2
