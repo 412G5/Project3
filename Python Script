@@ -2,6 +2,10 @@
 # By Lauren, Linda, Diego, and Harley
 
 import requests
+from datetime import date
+from datetime import datetime
+from datetime import timedelta
+import re
 
 url = 'https://s3.amazonaws.com/tcmg476/http_access_log'
 r = requests.get(url, allow_redirects=True)
