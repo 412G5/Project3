@@ -31,6 +31,7 @@ with open("python.txt", "r") as textfile:
 # begins process of extracting date from each line
 file = open("python.txt", "r")
 count = 0
+Q1_lines = 0
 
 for line in file:
     count += 1
@@ -44,6 +45,11 @@ for line in file:
     clean_datetime = datetime.strptime(date_str.group(), '%d/%b/%Y')
     line_date = clean_datetime.date()
 
+    # compares dates
+    if line_date >= six_months_ago:
+        Q1_lines +=1
+
+print("Total number of requests in the last six months:", Q1_lines)
 
 
 # Question 2
