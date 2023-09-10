@@ -21,7 +21,12 @@ file = open("python.txt")
 
 # Question 1
 
-
+# finds date of last entry
+with open("python.txt", "r") as textfile:
+    last_line = textfile.readlines()[-1]
+    last_datetime = last_line.split()[3]
+    clean_datetime = datetime.strptime(last_datetime, '[%d/%b/%Y:%H:%M:%S')
+    last_date = clean_datetime.date()
 
 
 # Question 2
