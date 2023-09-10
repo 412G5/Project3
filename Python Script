@@ -1,7 +1,8 @@
 #python script for retrieving log files, determining total number of requests, and getting requests in a 6 month time period
 # By Lauren, Linda, Diego, and Harley
 
-import requests
+
+import requests as r
 from datetime import date
 from datetime import datetime
 from datetime import timedelta
@@ -41,7 +42,7 @@ for line in file:
         continue
     
     # searches for datetime and extracts date only
-    date_str = re.search('\d{2}/\D{3}/\d{4}', line)
+    date_str = requests.search('\d{2}/\D{3}/\d{4}', line)
     clean_datetime = datetime.strptime(date_str.group(), '%d/%b/%Y')
     line_date = clean_datetime.date()
 
