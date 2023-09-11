@@ -1,6 +1,8 @@
 #python script for retrieving log files, determining total number of requests, and getting requests in a 6 month time period
 # By Lauren, Linda, Diego, and Harley
 
+url = 'https://s3.amazonaws.com/tcmg476/http_access_log'
+r = requests.get(url, allow_redirects=True)
 
 import requests as r
 from datetime import date
@@ -8,8 +10,7 @@ from datetime import datetime
 from datetime import timedelta
 import requests
 
-url = 'https://s3.amazonaws.com/tcmg476/http_access_log'
-r = requests.get(url, allow_redirects=True)
+
 
 with open("python.txt","wb") as textfile:
     for chunk in r.iter_content(chunk_size=1024):
