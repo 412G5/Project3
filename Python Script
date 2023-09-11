@@ -1,8 +1,21 @@
 #python script for retrieving log files, determining total number of requests, and getting requests in a 6 month time period
 # By Lauren, Linda, Diego, and Harley
 
+<<<<<<< Updated upstream
 import os
 import requests
+=======
+#IMPORTANT THINGS TO RUN BEFORE RUNNING CODE: 
+#Make sure that you have all nesscary files are downloaded
+#You need to have this url = 'https://s3.amazonaws.com/tcmg476/http_access_log' downloaded on your physically device
+#Once that is on your devices folder: You want to open what every terminal your using and run this:
+#IF you ON WINDOWS: py -m pip install requests
+#IF you ON MAC : python3 -m pip install requests 
+#That code will allow you to run the request code to get and sort the file logs
+
+  
+import requests as r
+>>>>>>> Stashed changes
 from datetime import date
 from datetime import datetime
 from datetime import timedelta
