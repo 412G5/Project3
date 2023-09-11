@@ -23,8 +23,8 @@ if os.path.exists('python.txt') != True:
     print("Download Complete!")
 
 # Question 1
-
 print("Extracting data...")
+
 # extracts last date and calculating date six months ago
 with open("python.txt", "r") as textfile:
     last_line = textfile.readlines()[-1]
