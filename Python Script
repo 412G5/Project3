@@ -1,10 +1,9 @@
 #python script for retrieving log files, determining total number of requests, and getting requests in a 6 month time period
 # By Lauren, Linda, Diego, and Harley
 
-<<<<<<< Updated upstream
-import os
-import requests
-=======
+
+
+
 #IMPORTANT THINGS TO RUN BEFORE RUNNING CODE: 
 #Make sure that you have all necessary files are downloaded
 #Open your preferred terminal and run this:
@@ -13,12 +12,13 @@ import requests
 #That code will allow you to run the request code to get and sort the file logs
 
   
-import requests as r
->>>>>>> Stashed changes
+
 from datetime import date
 from datetime import datetime
 from datetime import timedelta
 import re
+import os
+import requests
 
 if os.path.exists('python.txt') != True: 
     print("Downloading file...")
